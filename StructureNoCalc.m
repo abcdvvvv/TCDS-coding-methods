@@ -1,7 +1,7 @@
 %{
 This script outputs the separation matrix for all basic 
 configurations, stored in a variable called validmatrix.
-%} 
+%}
 clear validmatrix
 tic
 d = 6;
@@ -10,9 +10,9 @@ m = 1;
 
 [J,I] = meshgrid(1:d-1);
 idx0 = J.*(J-1)/2+I;
-for j=1:d-1
-    for i=j+1:d
-        idx0(i,j)=1;
+for j = 1:d-1
+    for i = j+1:d
+        idx0(i,j) = 1;
     end
 end
 
@@ -22,8 +22,8 @@ for a = 0:2^(colNumber-1)-1
     pp = double(p)-'0';
     pp = [0,pp];
     A = pp(idx0);
-    A(1,1)=1;
-    A(:,d)=1;
+    A(1,1) = 1;
+    A(:,d) = 1;
     pass = StructureNoCalc2(d,A);
     if pass == 1
         validmatrix(:,:,m) = A; %#ok<*SAGROW>
@@ -53,7 +53,7 @@ if pass == 1
         B = A(:,j+1:end);
         a = (n-j):-1:1;
         for i = 1:j
-            if (A(i,j) == 1) && (max(B(i,:).*a) + max(diag(B,-i).*a') < n-j+1)
+            if (A(i,j) == 1) && (max(B(i,:).*a)+max(diag(B,-i).*a') < n-j+1)
                 pass = 0;
                 break
             end
