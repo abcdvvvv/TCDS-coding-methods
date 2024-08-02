@@ -1,4 +1,4 @@
-# Coding methods for TCDS
+# Coding methods for thermally coupled distillation systems
 This repository contains algorithms for generating separation matrices and column combination matrices of thermally coupled distillation systems (TCDS).
 ```MATLAB
 % Calculate all feasible configurations (basic configurations)
