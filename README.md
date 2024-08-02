@@ -1,4 +1,4 @@
-# algorithms-for-HITCDS
+# Coding methods for HITCDS
 This repository contains algorithms for generating separation matrices and column combination matrices of thermally coupled distillation systems (TCDS).
 ```MATLAB
 % Calculate all feasible configurations (basic configurations)
